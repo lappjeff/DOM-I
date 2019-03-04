@@ -66,6 +66,7 @@ navTags.forEach(function(tag) {
 })
 
 //CTA
+let cta = document.querySelector('.cta')
 let ctaText = document.querySelector('h1');
 ctaText.textContent = siteContent['cta']['h1'];
 let ctaBtn = document.querySelector('button');
@@ -73,6 +74,20 @@ ctaBtn.textContent = siteContent['cta']['button']
 
 let ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent['cta']['img-src'])
+
+const breakBtn = document.createElement('button')
+breakBtn.textContent = 'Hide Me'
+breakBtn.style.height = '10%'
+breakBtn.style.border = '1px solid black'
+breakBtn.style.background = 'red'
+breakBtn.style.cursor = 'pointer'
+
+function hide (e) {
+    e.target.style.visibility = 'hidden';
+}
+
+breakBtn.addEventListener ('click', hide)
+cta.appendChild(breakBtn)
 
 //Main Content
 
