@@ -41,12 +41,10 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let middleImg = document.getElementById('middle-img');
-middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
-
 //Nav
 
-let navTags = document.querySelectorAll('a');
+let nav = document.querySelector('nav')
+let navTags = document.querySelectorAll('nav a');
 navTags[0].textContent = siteContent['nav']['nav-item-1']
 navTags[1].textContent = siteContent['nav']['nav-item-2']
 navTags[2].textContent = siteContent['nav']['nav-item-3']
@@ -54,10 +52,22 @@ navTags[3].textContent = siteContent['nav']['nav-item-4']
 navTags[4].textContent = siteContent['nav']['nav-item-5']
 navTags[5].textContent = siteContent['nav']['nav-item-6']
 
+let appendToNav = document.createElement('a')
+appendToNav.textContent = 'Append';
+
+let prependToNav = document.createElement('a')
+prependToNav.textContent = 'Prepend'
+
+nav.appendChild(appendToNav)
+nav.prepend(prependToNav)
+
+navTags.forEach(function(tag) {
+    tag.style.color = 'green';
+})
+
 //CTA
 let ctaText = document.querySelector('h1');
 ctaText.textContent = siteContent['cta']['h1'];
-
 let ctaBtn = document.querySelector('button');
 ctaBtn.textContent = siteContent['cta']['button']
 
@@ -69,7 +79,8 @@ ctaImg.setAttribute('src', siteContent['cta']['img-src'])
 let h4Tag = document.querySelectorAll('h4');
 let mainContentTop = document.querySelectorAll('.top-content .text-content p')
 let mainContentBottom = document.querySelectorAll('.bottom-content .text-content p')
-// console.log(mainContentP)
+let middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 //Top content
 h4Tag[0].textContent = siteContent['main-content']['features-h4']
 h4Tag[1].textContent = siteContent['main-content']['about-h4']
