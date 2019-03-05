@@ -45,12 +45,19 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let nav = document.querySelector('nav')
 let navTags = document.querySelectorAll('nav a');
-navTags[0].textContent = siteContent['nav']['nav-item-1']
-navTags[1].textContent = siteContent['nav']['nav-item-2']
-navTags[2].textContent = siteContent['nav']['nav-item-3']
-navTags[3].textContent = siteContent['nav']['nav-item-4']
-navTags[4].textContent = siteContent['nav']['nav-item-5']
-navTags[5].textContent = siteContent['nav']['nav-item-6']
+const tagArray = Array.from(navTags)
+console.log(tagArray)
+
+for (let i = 0; i < tagArray.length; i++) {
+    tagArray[i].textContent = siteContent['nav']['nav-item-' + i]
+}
+
+// navTags[0].textContent = siteContent['nav']['nav-item-1']
+// navTags[1].textContent = siteContent['nav']['nav-item-2']
+// navTags[2].textContent = siteContent['nav']['nav-item-3']
+// navTags[3].textContent = siteContent['nav']['nav-item-4']
+// navTags[4].textContent = siteContent['nav']['nav-item-5']
+// navTags[5].textContent = siteContent['nav']['nav-item-6']
 
 let appendToNav = document.createElement('a')
 appendToNav.textContent = 'Append';
